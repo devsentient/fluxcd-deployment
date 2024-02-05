@@ -18,14 +18,15 @@ spec:
       includeCertManager: "true"
     ## temp certmanager values for testing
 
-    domain: pat-test.canopyhub.io
-    clientName: pat-test
+    domain: REPLACE ME
+    clientName: REPLACE ME
     clientLogoDark: "logo"
     clientLogoLight: "logo"
 
     # Ensure that the clusterName is the same as your actual EKS cluster name on AWS dashboard
-    clusterName: pat-test
+    clusterName: REPLACE ME
 
+    # openssl rand -hex 20
     oauthClientSecret: 72844290c92db817058e48676be3ef20f37ac806
 
     nodeSelectorExpressions:
@@ -38,7 +39,7 @@ spec:
         pipeline: "default-jobs-pool"
 
     sshportal:
-      domain: pat-test.canopyhub.io
+      domain: REPLACE ME
 
     credentials:
       aws:
@@ -46,5 +47,5 @@ spec:
         region: us-east-2
 
     gitServer:
-      repo: git@github.com:devsentient/patrick-auto-test-deployment.git
-      repoUrl: --repo=git@github.com:devsentient/patrick-auto-test-deployment.git
+      repo: git@github.com:REPLACE ME/REPLACE ME.git
+      repoUrl: --repo=git@github.com:REPLACE ME/REPLACE ME.git
