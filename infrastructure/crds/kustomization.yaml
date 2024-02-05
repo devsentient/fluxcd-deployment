@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - cert-manager.crds.yaml
+  - crd-all.gen.yaml
+  - customresourcedefinition-default-clustertriggerauthentications.keda.sh.yaml
+  - customresourcedefinition-default-istiooperators.install.istio.io.yaml
+  - customresourcedefinition-default-scaledjobs.keda.sh.yaml
+  - customresourcedefinition-default-scaledobjects.keda.sh.yaml
+  - customresourcedefinition-default-triggerauthentications.keda.sh.yaml
+  # - customresourcedefinition-default-certificaterequests.cert-manager.io.yaml
+  # - customresourcedefinition-default-certificates.cert-manager.io.yaml
+  # - customresourcedefinition-default-challenges.acme.cert-manager.io.yaml
+  # - customresourcedefinition-default-clusterissuers.cert-manager.io.yaml
+  # - customresourcedefinition-default-issuers.cert-manager.io.yaml
+  # - customresourcedefinition-default-orders.acme.cert-manager.io.yaml

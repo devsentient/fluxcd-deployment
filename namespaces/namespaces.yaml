@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hyperplane-core
+
+--- 
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hyperplane-certmanager
+
+--- 
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hyperplane-pipelines
+
+--- 
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hyperplane-jhub

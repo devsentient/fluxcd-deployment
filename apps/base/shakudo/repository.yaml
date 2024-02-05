@@ -1,0 +1,11 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: shakudo-repo
+spec:
+  interval: 1m
+  url: ssh://git@github.com/devsentient/fluxcd-shakudo-helm-chart.git
+  secretRef:
+    name: git-ssh-key
+  ref:
+    branch: main

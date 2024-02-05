@@ -1,0 +1,50 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: shakudo-hyperplane
+  namespace: hyperplane-core
+spec:
+  chart:
+    spec:
+      version: ">=3.0.0"
+  values:
+    ## temp certmanager values for testing
+    stagingcert: true
+    certManager:
+      clusterIssuerProject: "hyperplane-test"
+      serviceAccountName: "service-account-key-certmanager-y7pshm5k"
+      serviceAccountkey: "gcp-service-account-credentials.json"
+    components:
+      includeCertManager: "true"
+    ## temp certmanager values for testing
+
+    domain: pat-test.canopyhub.io
+    clientName: pat-test
+    clientLogoDark: "logo"
+    clientLogoLight: "logo"
+
+    # Ensure that the clusterName is the same as your actual EKS cluster name on AWS dashboard
+    clusterName: pat-test
+
+    oauthClientSecret: 72844290c92db817058e48676be3ef20f37ac806
+
+    nodeSelectorExpressions:
+      key: "hyperplane.dev/nodeType"
+      value:
+        hyperSys: "hyperplane-system-pool"
+        default: "default-jhub-pool"
+        gpu: "gpu-pool"
+        dask: "dask-worker-pool"
+        pipeline: "default-jobs-pool"
+
+    sshportal:
+      domain: pat-test.canopyhub.io
+
+    credentials:
+      aws:
+        enabled: true
+        region: us-east-2
+
+    gitServer:
+      repo: git@github.com:devsentient/patrick-auto-test-deployment.git
+      repoUrl: --repo=git@github.com:devsentient/patrick-auto-test-deployment.git
